@@ -49,7 +49,7 @@ $custom-dark-theme: mat.define-dark-theme(
 @include mat.button-theme($custom-theme);
 
 .dark {
-  @include mat.core-theme($custom-dark-theme);
+  @include mat.core-color($custom-dark-theme);
   @include mat.icon-color($custom-dark-theme);
   @include mat.toolbar-color($custom-dark-theme);
   @include mat.button-color($custom-dark-theme);
