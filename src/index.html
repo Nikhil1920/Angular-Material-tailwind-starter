@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>MatTailStarter</title>
@@ -10,7 +11,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+
+<body class="mat-app-background">
+  <script>
+    let key = localStorage.getItem("dark_mode");
+    let is_dark_mode;
+    if (key == null) {
+      is_dark_mode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    } else {
+      is_dark_mode = (key === 'true');
+    }
+    if (is_dark_mode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+    localStorage.setItem('dark_mode', is_dark_mode.toString());
+  </script>
   <app-root></app-root>
 </body>
+
 </html>
