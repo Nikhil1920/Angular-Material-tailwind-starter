@@ -19,6 +19,8 @@ jobs:
         run: npm ci
       - name: Build site
         run: npm run build
+      - name: make 404 file
+        run: cp index.html 404.html
       - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
